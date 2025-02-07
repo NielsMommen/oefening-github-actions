@@ -34,4 +34,4 @@ jobs:
           token: ${{ secrets.SLACK_BOT_TOKEN }}
           payload: |
             channel: ${{ secrets.SLACK_CHANNEL_ID }}
-            text: "Build with tag ${{ TAG_NAME }} completed and pushed!"
+            text: "Build with tag $TAG_NAME completed and pushed!"
