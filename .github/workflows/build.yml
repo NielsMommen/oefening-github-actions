@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-java@v4
         with:
@@ -22,8 +24,8 @@ jobs:
 
       - name: Tag and push
         run: |
-          git tag ${{ steps.version.outputs.TAG_NAME }} main
-          git push origin tag ${{ steps.version.outputs.TAG_NAME }}
+          git tag $TAG_NAME main
+          git push origin tag $TAG_NAME
 
       - name: Post text to a Slack channel
         uses: slackapi/slack-github-action@v2.0.0
