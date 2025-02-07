@@ -17,7 +17,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Generate version
-        run: echo "TAG_NAME=$(./build_version.sh)" >> $GITHUB_OUTPUT
+        run: echo "TAG_NAME=$(./build_version.sh)" >> $GITHUB_ENV
 
       - name: Build with Gradle
         run: ./gradlew build
